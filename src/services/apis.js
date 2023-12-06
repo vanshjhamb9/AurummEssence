@@ -1,10 +1,10 @@
-const BASE_URL = "http://localhost:4000/api/v1"
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 console.log("Base Url -: ", BASE_URL);
 
 // AUTH ENDPOINTS
 export const endpoints = {
-  SENDOTP_API: "http://localhost:4000/api/v1" + "/auth/sendotp",
+  SENDOTP_API: BASE_URL  + "/auth/sendotp",
   SIGNUP_API: BASE_URL + "/auth/signup",
   LOGIN_API: BASE_URL + "/auth/login",
   RESETPASSTOKEN_API: BASE_URL + "/auth/reset-password-token",
@@ -20,23 +20,22 @@ export const profileEndpoints = {
 
 // CONSUMERS ENDPOINTS
 export const consumerEndpoints = {
-  PRODUCT_PAYMENT_API: "http://localhost:4000/api/v1" + "/payment/capturePayment",
-  PRODUCT_VERIFY_API: "http://localhost:4000/api/v1" + "/payment/verifyPayment",
-  SEND_PAYMENT_SUCCESS_EMAIL_API: "http://localhost:4000/api/v1" + "/payment/sendPaymentSuccessEmail",
+  PRODUCT_PAYMENT_API: BASE_URL  + "/payment/capturePayment",
+  PRODUCT_VERIFY_API: BASE_URL  + "/payment/verifyPayment",
+  SEND_PAYMENT_SUCCESS_EMAIL_API: BASE_URL  + "/payment/sendPaymentSuccessEmail",
 }
 
 // PRODUCT ENDPOINTS
 export const ProductEndpoints = {
-  GET_ALL_PRODUCT_API: "http://localhost:4000/api/v1" + "/product/getAllProducts",
-  PRODUCT_DETAILS_API: "http://localhost:4000/api/v1" + "/product/getProductDetails",
+  GET_ALL_PRODUCT_API: BASE_URL  + "/product/getAllProducts",
+  PRODUCT_DETAILS_API: BASE_URL  + "/product/getProductDetails",
   EDIT_PRODUCT_API: BASE_URL + "/product/editProduct",
-  PRODUCT_CATEGORIES_API: "http://localhost:4000/api/v1" + "/product/categoryPageDetails",
+  PRODUCT_CATEGORIES_API: BASE_URL  + "/product/categoryPageDetails",
   PRODUCT_SUBCATEGORIES_API: BASE_URL + "/product/showAllSubCategories",
   CREATE_PRODUCT_API: BASE_URL + "/product/createProduct",
   GET_ALL_ADMIN_PRODUCTS_API: BASE_URL + "/product/getAdminProducts",
   DELETE_PRODUCT_API: BASE_URL + "/product/deleteProduct",
-  GET_FULL_PRODUCT_DETAILS_AUTHENTICATED:
-    BASE_URL + "/product/getFullProductDetails",
+  GET_FULL_PRODUCT_DETAILS_AUTHENTICATED: BASE_URL + "/product/getFullProductDetails",
   CREATE_RATING_API: BASE_URL + "/product/createRating",
 }
 
@@ -47,17 +46,17 @@ export const ratingsEndpoints = {
 
 // CATAGORIES API
 export const categories = {
-  CATEGORIES_API: "http://localhost:4000/api/v1" + "/product/showAllCategories",
+  CATEGORIES_API: BASE_URL  + "/product/showAllCategories",
 }
 
 //SUBCATEGORIES API
 export const subCategories = {
-    SUBCATEGORIES_API : "http://localhost:4000/api/v1/product" + "/showAllSubCategories"
+    SUBCATEGORIES_API : BASE_URL  + "/showAllSubCategories"
 }
 
 // CATALOG PAGE DATA
 export const catalogData = {
-  CATALOGPAGEDATA_API: "http://localhost:4000/api/v1/product" + "/getSubCategoryPageDetails",
+  CATALOGPAGEDATA_API: BASE_URL  + "/getSubCategoryPageDetails",
 }
 // CONTACT-US API
 export const contactusEndpoint = {
